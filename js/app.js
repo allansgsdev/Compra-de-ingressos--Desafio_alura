@@ -67,6 +67,7 @@ function comprar() {
 campoQuantidadePista.textContent = 100;
 campoQuantidadeSuperior.textContent = 200;
 campoQuantidadeInferior.textContent = 400;
+
 const input = document.querySelector('input');
 
 input.addEventListener("keyup", ({ key }) => {
