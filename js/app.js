@@ -44,6 +44,7 @@ function comprar() {
                         alert('Ingresso indisponível!');
                     }
                 }
+                campoQuantidade.value = '';
             }
         } else {
             alert('Insira uma quantidade válida');
