@@ -84,7 +84,8 @@ form .input-group select {
 }
 
 form .input-group input {
-    width: 60px;
+    width: 80px;
+    text-align: center;
 }
 
 form .input-group input::placeholder {
