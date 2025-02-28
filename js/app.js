@@ -25,31 +25,33 @@ function comprar() {
     var quantidadePista = parseInt(campoQuantidadePista.textContent);
     var quantidadeInferior = parseInt(campoQuantidadeInferior.textContent);
     var quantidadeSuperior = parseInt(campoQuantidadeSuperior.textContent);
+    var indexIngresso = campoIngresso.selectedIndex;
+    var textoIngresso = campoIngresso.options[indexIngresso].text;
 
     if (!local || local.trim() === '') {
         alert('Insira um tipo de ingresso válido.');
     } else {
         if (!isNaN(quantidade) && quantidade >= 1) {
-            if (confirm(`Você realmente deseja comprar este ingresso?\n\n${quantidade}x ${local}`)) {
+            if (confirm(`Você realmente deseja comprar este ingresso?\n\n${quantidade}x ${textoIngresso}`)) {
                 if (local == 'pista') {
                     if (quantidadePista >= quantidade) {
                         campoQuantidadePista.textContent -= quantidade;
                     } else {
-                        alert(`Quantidade indisponível para ${local}.\n\n${quantidadePista} ${singularOuPlural(quantidade, 'ingressos disponíveis', 'ingresso disponível')}`);
+                        alert(`Quantidade indisponível para ${textoIngresso}.\n\n${quantidadePista} ${singularOuPlural(quantidade, 'ingressos disponíveis', 'ingresso disponível')}`);
                     }
                 }
                 if (local == 'superior') {
                     if (quantidadeSuperior >= quantidade) {
                         campoQuantidadeSuperior.textContent -= quantidade;
                     } else {
-                        alert(`Quantidade indisponível para ${local}.\n\n${quantidadeSuperior} ${singularOuPlural(quantidade, 'ingressos disponíveis', 'ingresso disponível')}`);
+                        alert(`Quantidade indisponível para ${textoIngresso}.\n\n${quantidadeSuperior} ${singularOuPlural(quantidade, 'ingressos disponíveis', 'ingresso disponível')}`);
                     }
                 }
                 if (local == 'inferior') {
                     if (quantidadeInferior >= quantidade) {
                         campoQuantidadeInferior.textContent -= quantidade;
                     } else {
-                        alert(`Quantidade indisponível para ${local}.\n\n${quantidadeInferior} ${singularOuPlural(quantidade, 'ingressos disponíveis', 'ingresso disponível')}`);
+                        alert(`Quantidade indisponível para ${textoIngresso}.\n\n${quantidadeInferior} ${singularOuPlural(quantidade, 'ingressos disponíveis', 'ingresso disponível')}`);
                     }
                 }
             }
